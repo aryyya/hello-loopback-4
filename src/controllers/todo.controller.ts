@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Todo} from '../models';
-import {TodoRepository} from '../repositories';
+import { Todo } from '../models';
+import { TodoRepository } from '../repositories';
 
 export class TodoController {
   constructor(
     @repository(TodoRepository)
-    public todoRepository : TodoRepository,
-  ) {}
+    public todoRepository: TodoRepository,
+  ) { }
 
   @post('/todos', {
     responses: {
       '200': {
         description: 'Todo model instance',
-        content: {'application/json': {schema: {'x-ts-type': Todo}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Todo } } },
       },
     },
   })
@@ -41,7 +41,7 @@ export class TodoController {
     responses: {
       '200': {
         description: 'Todo model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -57,7 +57,7 @@ export class TodoController {
         description: 'Array of Todo model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': Todo}},
+            schema: { type: 'array', items: { 'x-ts-type': Todo } },
           },
         },
       },
@@ -73,7 +73,7 @@ export class TodoController {
     responses: {
       '200': {
         description: 'Todo PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -88,7 +88,7 @@ export class TodoController {
     responses: {
       '200': {
         description: 'Todo model instance',
-        content: {'application/json': {schema: {'x-ts-type': Todo}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Todo } } },
       },
     },
   })
